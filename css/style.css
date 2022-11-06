@@ -525,33 +525,22 @@ ul.section-list li:before {
 
 .input::-webkit-input-placeholder {
   color: #d9d9d9;
-  -webkit-transition: opacity 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s;
 }
 
 .input::-moz-placeholder {
   color: #d9d9d9;
-  -moz-transition: opacity 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s;
 }
 
 .input:-ms-input-placeholder {
   color: #d9d9d9;
-  -ms-transition: opacity 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s;
 }
 
 .input::-ms-input-placeholder {
   color: #d9d9d9;
-  -ms-transition: opacity 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s;
 }
 
 .input::placeholder {
   color: #d9d9d9;
-  -webkit-transition: opacity 0.3s ease 0s;
-  -o-transition: opacity 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s;
 }
 
 .input:focus {
@@ -560,22 +549,65 @@ ul.section-list li:before {
 
 .input:focus::-webkit-input-placeholder {
   opacity: 0;
+  -webkit-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
 }
 
 .input:focus::-moz-placeholder {
   opacity: 0;
+  -moz-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
 }
 
 .input:focus:-ms-input-placeholder {
   opacity: 0;
+  -ms-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
 }
 
 .input:focus::-ms-input-placeholder {
   opacity: 0;
+  -ms-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
 }
 
 .input:focus::placeholder {
   opacity: 0;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+
+.form__error {
+  pointer-events: none;
+  color: #f00;
+  position: absolute;
+  left: 1rem;
+  top: 0.875rem;
+}
+
+@supports (font-size: clamp( 0.875rem , 0.8295454545rem  +  0.2272727273vw , 1rem )) {
+  .form__error {
+    font-size: clamp( 0.875rem , 0.8295454545rem  +  0.2272727273vw , 1rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.8295454545rem  +  0.2272727273vw , 1rem )) {
+  .form__error {
+    font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 55);
+  }
+}
+
+@supports (line-height: clamp( 1.3125rem , 1.2443181818rem  +  0.3409090909vw , 1.5rem )) {
+  .form__error {
+    line-height: clamp( 1.3125rem , 1.2443181818rem  +  0.3409090909vw , 1.5rem );
+  }
+}
+
+@supports not (line-height: clamp( 1.3125rem , 1.2443181818rem  +  0.3409090909vw , 1.5rem )) {
+  .form__error {
+    line-height: calc(1.3125rem + 0.1875 * (100vw - 20rem) / 55);
+  }
 }
 
 .btn {
@@ -821,6 +853,34 @@ ul.section-list li:before {
 
 .product__add input {
   width: 100%;
+}
+
+.product__add_field {
+  position: relative;
+}
+
+.product__add_field._form-error input {
+  border-color: #f00;
+}
+
+.product__add_field._form-error input::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.product__add_field._form-error input::-moz-placeholder {
+  opacity: 0;
+}
+
+.product__add_field._form-error input:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.product__add_field._form-error input::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.product__add_field._form-error input::placeholder {
+  opacity: 0;
 }
 
 .product__note {
